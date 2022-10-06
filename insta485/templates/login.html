@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>insta485</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<nav>
+    <ul class="nav">
+        <!--Logo-->
+        <li style="float:left"><a href="/"><img src=/static/images/logo.png alt="logo" />
+            </a></li>
+        <!--Explore and user-->
+        <li style="float:right">
+            <h1>login</h1>
+        </li>
+    </ul>
+</nav>
+
+<main>
+    <!-- DO NOT CHANGE THIS (aside from styling) -->
+    <form action="/accounts/?target=/" method="post" enctype="multipart/form-data">
+        <label for="username">Username</label>
+        <input type="text" name="username" required />
+        <label for="password">password</label>
+        <input type="password" name="password" required />
+        <input type="submit" value="login" />
+        <input type="hidden" name="operation" value="login" />
+    </form>
+    <p>Don't have an account? <a href='/accounts/create/'><strong>Sign up</strong></a></p>
+</main>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>insta485</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<nav>
+    <ul class="nav">
+        <!--Logo-->
+        <li style="float:left"><a href="/"><img src=/static/images/logo.png alt="logo" />
+            </a></li>
+        <!--Explore and user-->
+        <li><a href="/users/{{logname}}/">{{logname}}</a></li>
+        <li><a href="/explore/">explore</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h1>Following</h1>
+
+    {% for following in followings %}
+    <div class="followers">
+        <img class="profile-pic" src="/uploads/{{following['following_img_url']}}" alt="">
+        <a class="username" href="/users/{{following['followingusername']}}/">{{following['followingusername']}}</a>
+
+        {% if following['followingusername'] == logname%}
+        {% elif following['logname_follow_following'] %}
+        <p class="is_following">following</p>
+        <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+        <form action="/following/?target={{current_url}}" method="post" enctype="multipart/form-data">
+            <input type="submit" name="unfollow" value="unfollow" />
+            <input type="hidden" name="username" value="{{following['followingusername']}}" />
+            <input type="hidden" name="operation" value="unfollow" />
+        </form>
+        {% else %}
+        <p class="is_following">not following</p>
+        <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+        <form action="/following/?target={{current_url}}" method="post" enctype="multipart/form-data">
+            <input type="submit" name="follow" value="follow" />
+            <input type="hidden" name="username" value="{{following['followingusername']}}" />
+            <input type="hidden" name="operation" value="follow" />
+        </form>
+        {% endif %}
+    </div>
+    {% endfor %}
+</main>

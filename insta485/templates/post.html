@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>insta485</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<nav>
+    <ul class="nav">
+        <!--Logo-->
+        <li style="float:left"><a href="/"><img src=/static/images/logo.png alt="logo" />
+            </a></li>
+        <!--Explore and user-->
+        <li><a href="/users/{{logname}}/">{{logname}}</a></li>
+        <li><a href="/explore/">explore</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="post">
+        <div class="info">
+            <div class="user">
+                <a href="/users/{{post_owner}}/"><img class="profile-pic" src="/uploads/{{owner_img_url}}"
+                        alt="Profile Picture" />
+                </a>
+                <a class="username" href="/users/{{post_owner}}/">{{post_owner}}</a>
+                <a class="timestamp" href="/posts/{{postid}}/">{{timestamp}}</a>
+            </div>
+        </div>
+        <div>
+            <img class="post-content" src="/uploads/{{post_img_url}}" alt="" />
+        </div>
+        <div class="post-footer">
+            <div class="like-counter">
+                {% if likes == 1 %}
+                <p class="likes"> {{likes}} like</p>
+                {% else %}
+                <p class="likes"> {{likes}} likes</p>
+                {% endif %}
+            </div>
+            <div class="comments">
+                {% for comment in comments %}
+                <p><a class="username" href="/users/{{comment['owner']}}/">{{comment['owner']}}</a>
+                    {{comment['text']}}</p>
+                {% if comment['owner'] == logname %}
+                <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+                <form action="/comments/?target={{current_url}}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="operation" value="delete" />
+                    <input type="hidden" name="commentid" value="{{comment['commentid']}}" />
+                    <input type="submit" name="uncomment" value="delete" />
+                </form>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="like-button">
+                {% if liked_by_logname == 'yes' %}
+                <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+                <form action="/likes/?target={{current_url}}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="operation" value="unlike" />
+                    <input type="hidden" name="postid" value="{{postid}}" />
+                    <input type="submit" name="unlike" value="unlike" />
+                </form>
+                {% else %}
+                <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+                <form action="/likes/?target={{current_url}}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="operation" value="like" />
+                    <input type="hidden" name="postid" value="{{postid}}" />
+                    <input type="submit" name="like" value="like" />
+                </form>
+                {% endif %}
+            </div>
+            <div class="comment-button">
+                <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+                <form action="/comments/?target={{current_url}}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="operation" value="create" />
+                    <input type="hidden" name="postid" value="{{postid}}" />
+                    <input type="text" name="text" required />
+                    <input type="submit" name="comment" value="comment" />
+                </form>
+            </div>
+            {% if post_owner == logname %}
+            <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+            <form action="/posts/?target=/users/{{logname}}/" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="operation" value="delete" />
+                <input type="hidden" name="postid" value="{{postid}}" />
+                <input type="submit" name="delete" value="delete this post" />
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</main>

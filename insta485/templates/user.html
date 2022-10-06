@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>insta485</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<nav>
+    <ul class="nav">
+        <!--Logo-->
+        <li style="float:left"><a href="/"><img src=/static/images/logo.png alt="logo" />
+            </a></li>
+        <!--Explore and user-->
+        <li><a href="/users/{{logname}}/">{{logname}}</a></li>
+        <li><a href="/explore/">explore</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="profile-info">
+        <h1>{{username}}</h1>
+        {% if username == logname%}
+        <p><a class="username" href="/accounts/edit/"> Edit profile</a>
+            <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+        <form action="/accounts/logout" method="post" enctype="multipart/form-data">
+            <input type="submit" name="logout" value="Logout" />
+        </form>
+        {% elif is_following == 1 %}
+        <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+        <form action="/following/?target={{current_url}}" method="post" enctype="multipart/form-data">
+            <input type="submit" name="unfollow" value="unfollow" />
+            <input type="hidden" name="username" value="{{username}}" />
+            <input type="hidden" name="operation" value="unfollow" />
+        </form>
+        <p>following</p>
+        {% else %}
+        <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+        <form action="/following/?target={{current_url}}" method="post" enctype="multipart/form-data">
+            <input type="submit" name="follow" value="follow" />
+            <input type="hidden" name="username" value="{{username}}" />
+            <input type="hidden" name="operation" value="follow" />
+        </form>
+        <p>not following</p>
+        {% endif %}
+
+        {% if total_posts == 1 %}
+        <p>{{total_posts}} post
+            {% if followers == 1 %}
+            <a href="/users/{{username}}/followers/">{{followers}} follower</a>
+            {% else %}
+            <a href="/users/{{username}}/followers/">{{followers}} followers</a>
+            {% endif %}
+            <a href="/users/{{username}}/following/">{{following}} following</a>
+        </p>
+        {% else %}
+        <p>{{total_posts}} posts
+            {% if followers == 1 %}
+            <a href="/users/{{username}}/followers/">{{followers}} follower</a>
+            {% else %}
+            <a href="/users/{{username}}/followers/">{{followers}} followers</a>
+            {% endif %}
+            <a href="/users/{{username}}/following/">{{following}} following</a>
+        </p>
+        {% endif %}
+        <p>{{fullname}}</p>
+
+    </div>
+    <div class="posts">
+        {% if username == logname%}
+        <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+        <form action="/posts/?target={{current_url}}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required />
+            <input type="submit" name="create_post" value="upload new post" />
+            <input type="hidden" name="operation" value="create" />
+        </form>
+        {% endif %}
+        {% for post in posts %}
+        <a href="/posts/{{post['postid']}}/"> <img class="post1" src="/uploads/{{post['img_url']}}" alt="" /></a>
+        {% endfor %}
+    </div>
+</main>
+
+</html>

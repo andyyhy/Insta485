@@ -1,0 +1,86 @@
+.nav {
+    color: #000000;
+    list-style-type: none;
+    font-weight: bold;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+li a {
+    float: right;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.post {
+    border-style: solid;
+    border-width: 1px;
+    align-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.profile-pic {
+    width: 75px;
+    margin: 5px;
+}
+
+.timestamp {
+    float: right;
+}
+
+.post-content {
+    align-content: center;
+    width: 100%;
+}
+
+.username {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+.userInfo{
+    width: 75px;
+    margin: 5px;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.followers {
+    border-style: solid;
+    border-width: 1px;
+    align-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.is_following {
+    float: right;
+}
+
+.signup {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+input[type=text],
+[type=password],
+[type=file] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
