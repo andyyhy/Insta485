@@ -3,33 +3,32 @@
 
 <head>
     <title>insta485</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/delete.css">
 </head>
-<nav>
-    <ul class="nav">
-        <!--Logo-->
-        <li style="float:left"><a href="/"><img src=/static/images/logo.png alt="logo" />
-            </a></li>
-        <!--Explore and user-->
-        <li><a href="/users/{{logname}}/">{{logname}}</a></li>
-        <li><a href="/explore/">explore</a></li>
-        <li style="float:right">
-            <h1>login</h1>
-        </li>
-    </ul>
-</nav>
-
-<main>
-    <!-- DO NOT CHANGE THIS (aside from styling) -->
-    <div class=signup>
-        <p>{{logname}}</p>
-        <!-- DO NOT CHANGE THIS -->
-        <form action="/accounts/?target=/accounts/create/" method="post" enctype="multipart/form-data">
-            <input type="submit" name="delete" value="confirm delete account" />
-            <input type="hidden" name="operation" value="delete" />
-        </form>
-
-    </div>
-</main>
+<body>
+    <nav>
+        <ul class="nav">
+            <!--Logo-->
+            <li><a href="/"><img src=/static/images/logo.png alt="logo" />
+                </a></li>
+            <!--Explore and user-->
+            <li><a href="/users/{{logname}}/">{{logname}}</a></li>
+            <li><a href="/explore/">explore</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <!-- DO NOT CHANGE THIS (aside from styling) -->
+        <div class=signup>
+            <p>{{logname}}</p>
+            <!-- DO NOT CHANGE THIS -->
+            <form action="/accounts/?target=/accounts/create/" method="post" enctype="multipart/form-data">
+                <input type="submit" name="delete" value="confirm delete account" />
+                <input type="hidden" name="operation" value="delete" />
+            </form>
+    
+        </div>
+    </main>
+</body>
 
 </html>

@@ -1,0 +1,96 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS for your navigation bar */
+nav {
+    background-color: white; /* Change to your desired background color */
+    color: black; /* Change to your desired text color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav li {
+    margin-right: 20px; /* Adjust the spacing between elements */
+}
+
+.nav img {
+    width: 200px; /* Adjust the logo's width as needed */
+}
+
+/* Style for links */
+.nav a {
+    text-decoration: none;
+    color: black; /* Change to your desired link color */
+    font-weight: bold;
+}
+
+/* Style for the user's name link */
+.nav .right {
+    margin-right: 0; /* Remove margin for the user's name link */
+}
+
+/* Page container styles */
+main {
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Page title styles */
+h1 {
+    font-size: 24px; /* Adjust font size as needed */
+    margin-bottom: 20px;
+}
+
+/* Follower container styles */
+.followers {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Add padding to create a box feel */
+    border: 1px solid #ccc; /* Add a border for the box */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Background color for the box */
+}
+
+/* Follower profile image styles */
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Follower username styles */
+.username {
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Following status styles */
+.is_following {
+    font-size: 14px;
+    color: #007bff; /* Color for "following" status */
+    margin-left:20px;
+    margin-right: 20px;
+}

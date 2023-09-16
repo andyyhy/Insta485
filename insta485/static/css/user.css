@@ -1,0 +1,137 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* CSS for your navigation bar */
+nav {
+    background-color: white; /* Change to your desired background color */
+    color: black; /* Change to your desired text color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav li {
+    margin-right: 20px; /* Adjust the spacing between elements */
+}
+
+.nav img {
+    width: 200px; /* Adjust the logo's width as needed */
+}
+
+/* Style for links */
+.nav a {
+    text-decoration: none;
+    color: black; /* Change to your desired link color */
+    font-weight: bold;
+}
+
+/* Style for the user's name link */
+.nav .right {
+    margin-right: 0; /* Remove margin for the user's name link */
+}
+
+/* Page container styles */
+main {
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Profile info container styles */
+.profile-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-info h1 {
+    font-size: 24px; /* Adjust font size as needed */
+    margin-bottom: 5px;
+}
+
+/* Edit profile link styles */
+.profile-info a.username {
+    text-decoration: none;
+    color: #007bff; /* Link color for "Edit profile" */
+}
+
+/* Logout button styles */
+.profile-info form[action="/accounts/logout"] input[type="submit"] {
+    background-color: transparent;
+    border: none;
+    color: #ff3333; /* Text color for logout button */
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Follow/unfollow button styles */
+.profile-info form[action^="/following/"] input[type="submit"] {
+    background-color: transparent;
+    border: none;
+    color: #007bff; /* Text color for follow/unfollow buttons */
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Follower/following count styles */
+.profile-info p {
+    margin: 10px 0;
+}
+
+/* Posts container styles */
+.posts {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Post image styles */
+.post1 {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #e1e1e1;
+}
+
+/* Upload new post button styles */
+.posts form[action^="/posts/"] input[type="file"] {
+    display: block; /* Display file input as a block element */
+    margin-bottom: 10px;
+}
+
+.posts form[action^="/posts/"] input[type="submit"] {
+    background-color: #007bff; /* Background color for "Upload new post" button */
+    border: none;
+    color: #fff; /* Text color for button text */
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Adjust as needed to match your design preferences */

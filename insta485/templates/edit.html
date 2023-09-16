@@ -3,35 +3,39 @@
 
 <head>
     <title>insta485</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/edit.css">
 </head>
-<nav>
-    <ul class="nav">
-        <!--Logo-->
-        <li style="float:left"><a href="/"><img src=/static/images/logo.png alt="logo" />
-            </a></li>
-        <!--Explore and user-->
-        <li><a href="/users/{{logname}}/">{{logname}}</a></li>
-        <li><a href="/explore/">explore</a></li>
-    </ul>
-</nav>
 
-<main>
-    <!-- DO NOT CHANGE THIS (aside from styling) -->
-    <div class=signup>
-        <p>{{logname}}</p>
-        <img src=/uploads/{{user_img_url}} alt="profile picutre" />
-        <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
-        <form action="/accounts/?target={{current_url}}" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" accept="image/*" />
-            <input type="text" name="fullname" value="{{fullname}}" required />
-            <input type="text" name="email" value="{{email}}" required />
-            <input type="submit" name="update" value="submit" />
-            <input type="hidden" name="operation" value="edit_account" />
-        </form>
-        <p><a href='/accounts/password/'><strong>Change Password</strong></a></p>
-        <p><a href='/accounts/delete/'><strong>Delete Account</strong></a></p>
-    </div>
-</main>
+<body>
+    <nav>
+        <ul class="nav">
+            <!--Logo-->
+            <li><a href="/"><img src=/static/images/logo.png alt="logo" />
+                </a></li>
+            <!--Explore and user-->
+            <li><a href="/users/{{logname}}/">{{logname}}</a></li>
+            <li><a href="/explore/">explore</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <!-- DO NOT CHANGE THIS (aside from styling) -->
+        <div class=signup>
+            <p>{{logname}}</p>
+            <img src=/uploads/{{user_img_url}} alt="profile picutre" />
+            <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+            <form action="/accounts/?target={{current_url}}" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" />
+                <input type="text" name="fullname" value="{{fullname}}" required />
+                <input type="text" name="email" value="{{email}}" required />
+                <input type="submit" name="update" value="submit" />
+                <input type="hidden" name="operation" value="edit_account" />
+            </form>
+            <p><a href='/accounts/password/'><strong>Change Password</strong></a></p>
+            <p><a href='/accounts/delete/'><strong>Delete Account</strong></a></p>
+        </div>
+    </main>
+</body>
+
 
 </html>
