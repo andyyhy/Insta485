@@ -3,22 +3,19 @@
 
 <head>
     <title>insta485</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/index.css">
 </head>
-<nav>
-    <ul class="nav">
-        <!--Logo-->
-        <li style="float:left"><a href="/"><img src=/static/images/logo.png alt="logo" />
-            </a></li>
-        <!--Explore and user-->
-        <li><a href="/users/{{logname}}/">{{logname}}</a></li>
-        <li><a href="/explore/">explore</a></li>
-    </ul>
-</nav>
-
 <main>
-
-    <body>
+        <nav>
+            <ul class="nav">
+                <!--Logo-->
+                <li><a href="/"><img src=/static/images/logo.png alt="logo" />
+                    </a></li>
+                <!--Explore and user-->
+                <li><a href="/users/{{logname}}/">{{logname}}</a></li>
+                <li><a href="/explore/">explore</a></li>
+            </ul>
+        </nav>
         <!-- Plain old HTML and jinja2 nav bar goes here -->
         <div id="reactEntry">
             Loading ...

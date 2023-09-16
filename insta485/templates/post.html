@@ -3,20 +3,19 @@
 
 <head>
     <title>insta485</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/post.css">
 </head>
-<nav>
-    <ul class="nav">
-        <!--Logo-->
-        <li style="float:left"><a href="/"><img src=/static/images/logo.png alt="logo" />
-            </a></li>
-        <!--Explore and user-->
-        <li><a href="/users/{{logname}}/">{{logname}}</a></li>
-        <li><a href="/explore/">explore</a></li>
-    </ul>
-</nav>
-
-<main>
+<body>
+    <nav>
+        <ul class="nav">
+            <!--Logo-->
+            <li><a href="/"><img src=/static/images/logo.png alt="logo" />
+                </a></li>
+            <!--Explore and user-->
+            <li><a href="/users/{{logname}}/">{{logname}}</a></li>
+            <li><a href="/explore/">explore</a></li>
+        </ul>
+    </nav>
     <div class="post">
         <div class="info">
             <div class="user">
@@ -38,20 +37,6 @@
                 <p class="likes"> {{likes}} likes</p>
                 {% endif %}
             </div>
-            <div class="comments">
-                {% for comment in comments %}
-                <p><a class="username" href="/users/{{comment['owner']}}/">{{comment['owner']}}</a>
-                    {{comment['text']}}</p>
-                {% if comment['owner'] == logname %}
-                <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
-                <form action="/comments/?target={{current_url}}" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="operation" value="delete" />
-                    <input type="hidden" name="commentid" value="{{comment['commentid']}}" />
-                    <input type="submit" name="uncomment" value="delete" />
-                </form>
-                {% endif %}
-                {% endfor %}
-            </div>
             <div class="like-button">
                 {% if liked_by_logname == 'yes' %}
                 <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
@@ -68,6 +53,20 @@
                     <input type="submit" name="like" value="like" />
                 </form>
                 {% endif %}
+            </div>
+            <div class="comments">
+                {% for comment in comments %}
+                <p><a class="username" href="/users/{{comment['owner']}}/">{{comment['owner']}}</a>
+                    {{comment['text']}}</p>
+                {% if comment['owner'] == logname %}
+                <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+                <form action="/comments/?target={{current_url}}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="operation" value="delete" />
+                    <input type="hidden" name="commentid" value="{{comment['commentid']}}" />
+                    <input type="submit" name="uncomment" value="delete" />
+                </form>
+                {% endif %}
+                {% endfor %}
             </div>
             <div class="comment-button">
                 <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
@@ -88,4 +87,4 @@
             {% endif %}
         </div>
     </div>
-</main>
+</body>

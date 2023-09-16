@@ -1,0 +1,173 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* CSS for your navigation bar */
+nav {
+    background-color: white; /* Change to your desired background color */
+    color: black; /* Change to your desired text color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav li {
+    margin-right: 20px; /* Adjust the spacing between elements */
+}
+
+.nav img {
+    width: 200px; /* Adjust the logo's width as needed */
+}
+
+/* Style for links */
+.nav a {
+    text-decoration: none;
+    color: black; /* Change to your desired link color */
+    font-weight: bold;
+}
+
+/* Style for the user's name link */
+.nav .right {
+    margin-right: 0; /* Remove margin for the user's name link */
+}
+
+
+/* Page container styles */
+.infinite-scroll-component {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+}
+
+/* Individual post styles */
+.Posts {
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.post {
+    padding: 10px;
+}
+
+.postHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* User info styles */
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.userInfo a {
+    text-decoration: none;
+    color: #333;
+}
+
+.userInfo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Timestamp styles */
+.timestamp a {
+    text-decoration: none;
+    color: #888;
+    font-size: 12px;
+}
+
+/* Post image styles */
+.post img {
+    max-width: 100%;
+    height: auto;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    margin: 10px 0;
+}
+
+/* Likes and comments styles */
+.likes{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.comments{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.likes button.like-unlike-button {
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.likes button.like-unlike-button:hover {
+    text-decoration: underline;
+}
+
+.comments p {
+    margin: 5px 0;
+}
+
+.comments a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+/* Comment form styles */
+.comment-form input[type="text"] {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+/* Styling for the delete comment button */
+.delete-comment-button {
+    background-color: #ff3333; /* Red background color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.delete-comment-button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}

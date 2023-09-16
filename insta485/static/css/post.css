@@ -1,0 +1,150 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Page container styles */
+body {
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* CSS for your navigation bar */
+nav {
+    background-color: white; /* Change to your desired background color */
+    color: black; /* Change to your desired text color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav li {
+    margin-right: 20px; /* Adjust the spacing between elements */
+}
+
+.nav img {
+    width: 200px; /* Adjust the logo's width as needed */
+}
+
+/* Style for links */
+.nav a {
+    text-decoration: none;
+    color: black; /* Change to your desired link color */
+    font-weight: bold;
+}
+
+/* Style for the user's name link */
+.nav .right {
+    margin-right: 0; /* Remove margin for the user's name link */
+}
+
+/* Post container styles */
+.post {
+    background-color: #fff; /* Background color for the post */
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* User info styles */
+.user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user img.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user a.username {
+    text-decoration: none;
+    color: #333; /* Text color for usernames */
+    font-weight: bold;
+}
+
+.user a.timestamp {
+    text-decoration: none;
+    color: #888; /* Text color for timestamps */
+    margin-left: auto;
+}
+
+/* Post image styles */
+.post-content {
+    max-width: 100%;
+    height: auto;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    margin: 10px 0;
+}
+
+/* Like counter styles */
+.like-counter p.likes {
+    color: #333; /* Text color for like counts */
+    font-weight: bold;
+}
+
+/* Comments styles */
+.comments p {
+    margin: 5px 0;
+}
+
+.comments a.username {
+    text-decoration: none;
+    color: #333; /* Text color for comment usernames */
+    font-weight: bold;
+}
+
+/* Delete comment button styles */
+.comments form[action="/comments/?target={{current_url}}"] input[type="submit"] {
+    background-color: transparent;
+    border: none;
+    color: #ff3333; /* Text color for delete buttons */
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Like/unlike button styles */
+.like-button form[action="/likes/?target={{current_url}}"] input[type="submit"] {
+    background-color: transparent;
+    border: none;
+    color: #007bff; /* Text color for like/unlike buttons */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Comment button styles */
+.comment-button form[action="/comments/?target={{current_url}}"] input[type="text"],
+.comment-button form[action="/comments/?target={{current_url}}"] input[type="submit"] {
+    width: auto;
+    background-color: transparent;
+    border: none;
+    color: #333; /* Text color for comment input and button */
+    cursor: text;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+/* Delete post button styles */
+.main form[action="/posts/?target=/users/{{logname}}/"] input[type="submit"] {
+    background-color: transparent;
+    border: none;
+    color: #ff3333; /* Text color for delete post button */
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
