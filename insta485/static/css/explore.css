@@ -76,6 +76,7 @@ h1 {
 .profile-pic {
     width: 75px; /* Adjust image size as needed */
     height: 75px; /* Adjust image size as needed */
+    object-fit: cover;
     border-radius: 50%;
     margin-right: 10px;
 }

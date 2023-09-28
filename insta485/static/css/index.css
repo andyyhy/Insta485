@@ -90,13 +90,6 @@ nav {
     color: #333;
 }
 
-.userInfo img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
 /* Timestamp styles */
 .timestamp a {
     text-decoration: none;
@@ -111,6 +104,14 @@ nav {
     border-top: 1px solid #e1e1e1;
     border-bottom: 1px solid #e1e1e1;
     margin: 10px 0;
+}
+
+.userInfo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
 }
 
 /* Likes and comments styles */
